@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Tilt+Neon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @font-face {
   font-family: "PrimaryFont";
   src: url("../fonts/SFUIText-Regular.ttf") format("truetype"), url("../fonts/SFUIText-Medium.ttf") format("truetype"), url("../fonts/SFUIText-Bold.ttf") format("truetype"), url("../fonts/SFUIText-Semibold.ttf") format("truetype"), url("../fonts/SFUIText-Light.ttf") format("truetype");
@@ -17,7 +18,7 @@
 }
 
 * {
-  font-family: "MyFont", sans-serif;
+  font-family: "Questrial", sans-serif;
 }
 
 .secondary-font {
@@ -46,6 +47,7 @@
   border-radius: 0px;
   padding: 10px;
   font-weight: bold;
+  background-color: transparent;
   transition: all 0.2s;
 }
 
@@ -57,7 +59,6 @@
 }
 .custom-input:focus {
   outline: none !important;
-  border: none;
 }
 
 option {
@@ -100,4 +101,100 @@ button:focus {
 
 .bg-gradient-custom {
   background: linear-gradient(to bottom, #87ceeb, #00bfff);
+}
+
+/* Background colors for badges */
+.badge-blue {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.badge-green {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge-red {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.badge-yellow {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.badge-orange {
+  background-color: #ffa500;
+  color: #fff;
+}
+
+.badge-purple {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.badge-pink {
+  background-color: #e83e8c;
+  color: #fff;
+}
+
+.badge-teal {
+  background-color: #20c997;
+  color: #fff;
+}
+
+.badge-cyan {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.badge-indigo {
+  background-color: #6610f2;
+  color: #fff;
+}
+
+.badge-lime {
+  background-color: #cddc39;
+  color: #000;
+}
+
+.badge-brown {
+  background-color: #795548;
+  color: #fff;
+}
+
+.badge-grey {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.badge-light-blue {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.badge-light-green {
+  background-color: #8bc34a;
+  color: #000;
+}
+
+.badge-light-grey {
+  background-color: #ced4da;
+  color: #000;
+}
+
+.badge-light-purple {
+  background-color: #8e44ad;
+  color: #fff;
+}
+
+.badge-light-red {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.badge-light-orange {
+  background-color: #ff8c00;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

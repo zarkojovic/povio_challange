@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>Home page</title>
   </head>
-  <body class="min-vh-100">
+  <body class="min-vh-100 bg-light">
     <div class="container-fluid p-0">
       <div class="row m-0">
         <!-- SIDEBAR -->
@@ -31,7 +31,7 @@
           <ul class="nav flex-column mb-auto mt-3">
             <li class="nav-item px-2">
               <a
-                href="#"
+                href="index.html"
                 class="nav-link active my-1 py-3 fw-bold d-flex align-items-center"
                 aria-current="page"
               >
@@ -104,7 +104,9 @@
                       <a class="dropdown-item" href="#">New project...</a>
                     </li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                      <a class="dropdown-item" href="profile.html">Profile</a>
+                    </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">Sign out</a></li>
                   </ul>
@@ -127,6 +129,7 @@
                       >
                         <input
                           type="text"
+                          id="searchBar"
                           placeholder="Search what you want..."
                           class="search-input flex-fill"
                         />
@@ -142,6 +145,7 @@
                       <div class="row">
                         <button
                           id="advancedSearchButton"
+                          type="button"
                           class="btn mt-1 text-end primary-color fw-bold fs-6 d-flex align-items-center justify-content-end"
                         >
                           Advanced search
@@ -184,42 +188,7 @@
 
                         <div class="mb-3">
                           <label class="form-label">Select Items</label>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="item1"
-                              name="items"
-                              value="item1"
-                            />
-                            <label class="form-check-label" for="item1">
-                              Item 1
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="item2"
-                              name="items"
-                              value="item2"
-                            />
-                            <label class="form-check-label" for="item2">
-                              Item 2
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="item3"
-                              name="items"
-                              value="item3"
-                            />
-                            <label class="form-check-label" for="item3">
-                              Item 3
-                            </label>
-                          </div>
+                          <div class="row" id="selectCategoriesnWrap"></div>
                         </div>
                       </div>
                     </div>
@@ -231,16 +200,31 @@
             <!-- VIEW AND SORT -->
             <div class="row">
               <div class="col d-flex justify-content-end">
-                <select name="sort" id="sort" class="custom-input border-0">
+                <select
+                  name="sort"
+                  id="sortItems"
+                  class="custom-input border-0"
+                >
                   <option value="0">Sort by</option>
-                  <option value="0">Select</option>
-                  <option value="0">Select</option>
-                  <option value="0">Select</option>
+                  <option value="date_asc">Newest</option>
+                  <option value="date_desc">Oldest</option>
+                  <option value="top_rated">Top Rated</option>
+                  <option value="low_rated">Lowest Rated</option>
                 </select>
-                <button class="btn">
+                <button
+                  class="btn"
+                  type="button"
+                  class="showTwo"
+                  onclick="printSolutionItems('6')"
+                >
                   <iconify-icon icon="ic:baseline-view-stream"></iconify-icon>
                 </button>
-                <button class="btn">
+                <button
+                  class="btn"
+                  type="button"
+                  class="showThree"
+                  onclick="printSolutionItems('4')"
+                >
                   <iconify-icon icon="ic:round-grid-view"></iconify-icon>
                 </button>
               </div>
