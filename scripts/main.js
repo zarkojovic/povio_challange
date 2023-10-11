@@ -1,5 +1,13 @@
+var path = window.location.pathname;
+
+console.log(path);
+
 $(document).ready(function () {
-  printSolutionItems("6");
+  if (path == "/profile.html") {
+    printSolutionItems("6", true);
+  } else if (path == "/index.html") {
+    printSolutionItems("6");
+  }
 
   $("#advancedSearchSection").hide();
   $("#advancedSearchButton").click(function () {
@@ -94,66 +102,69 @@ $(document).ready(function () {
   }
 });
 
-function printSolutionItems(rows = "6") {
+function printSolutionItems(rows = "6", user = false) {
   if (rows != "6" && rows != "4") {
     rows = "6";
   }
   var printItmes = getLS("objectsForSolutions");
   var categoriesObjects = getLS("categoriesObjects");
-
-  var searchInput = $("#searchBar").val();
-  var startDate = $("#startDate").val();
-  var endDate = $("#endDate").val();
-  var searchInput = $("#searchBar").val();
-  var sortItems = $("#sortItems").val();
-  if (searchInput.length > 0) {
-    printItmes = printItmes.filter((obj) =>
-      obj.title.toLowerCase().includes(searchInput.toLowerCase().trim())
-    );
-  }
-
-  if (startDate) {
-    printItmes = printItmes.filter(
-      (obj) => new Date(obj.crated_date) > new Date(startDate)
-    );
-  }
-  if (endDate) {
-    printItmes = printItmes.filter(
-      (obj) => new Date(obj.crated_date) < new Date(endDate)
-    );
-  }
-  var selectedCategories = [];
-  $(".advancedSearchCheckbox").each(function () {
-    if ($(this).is(":checked")) {
-      selectedCategories.push($(this).val());
+  if (!user) {
+    var searchInput = $("#searchBar").val();
+    var startDate = $("#startDate").val();
+    var endDate = $("#endDate").val();
+    var searchInput = $("#searchBar").val();
+    var sortItems = $("#sortItems").val();
+    if (searchInput.length > 0) {
+      printItmes = printItmes.filter((obj) =>
+        obj.title.toLowerCase().includes(searchInput.toLowerCase().trim())
+      );
     }
-  });
 
-  if (selectedCategories.length > 0) {
-    printItmes = printItmes.filter((obj) =>
-      obj.tags.some((tag) => selectedCategories.includes(tag))
-    );
-  }
-
-  if (sortItems !== "0") {
-    switch (sortItems) {
-      case "date_asc":
-        printItmes = printItmes.sort(
-          (a, b) => new Date(b.crated_date) - new Date(a.crated_date)
-        );
-        break;
-      case "date_desc":
-        printItmes = printItmes.sort(
-          (a, b) => new Date(a.crated_date) - new Date(b.crated_date)
-        );
-        break;
-      case "top_rated":
-        printItmes = printItmes.sort((a, b) => b.rating - a.rating);
-        break;
-      case "low_rated":
-        printItmes = printItmes.sort((a, b) => a.rating - b.rating);
-        break;
+    if (startDate) {
+      printItmes = printItmes.filter(
+        (obj) => new Date(obj.crated_date) > new Date(startDate)
+      );
     }
+    if (endDate) {
+      printItmes = printItmes.filter(
+        (obj) => new Date(obj.crated_date) < new Date(endDate)
+      );
+    }
+    var selectedCategories = [];
+    $(".advancedSearchCheckbox").each(function () {
+      if ($(this).is(":checked")) {
+        selectedCategories.push($(this).val());
+      }
+    });
+
+    if (selectedCategories.length > 0) {
+      printItmes = printItmes.filter((obj) =>
+        obj.tags.some((tag) => selectedCategories.includes(tag))
+      );
+    }
+
+    if (sortItems !== "0") {
+      switch (sortItems) {
+        case "date_asc":
+          printItmes = printItmes.sort(
+            (a, b) => new Date(b.crated_date) - new Date(a.crated_date)
+          );
+          break;
+        case "date_desc":
+          printItmes = printItmes.sort(
+            (a, b) => new Date(a.crated_date) - new Date(b.crated_date)
+          );
+          break;
+        case "top_rated":
+          printItmes = printItmes.sort((a, b) => b.rating - a.rating);
+          break;
+        case "low_rated":
+          printItmes = printItmes.sort((a, b) => a.rating - b.rating);
+          break;
+      }
+    }
+  } else {
+    printItmes = printItmes.filter((el) => el.user == "Michael Bell");
   }
 
   var html = "";
@@ -192,7 +203,7 @@ function printSolutionItems(rows = "6") {
                       </p>
                       <div class="d-flex justify-content-between">
                         <small class="text-muted">${formattedDate}</small>
-                        <small class="primary-color">${el.rating} <iconify-icon inline icon="bx:upvote"></iconify-icon></small>
+                        <small class="primary-color">${el.user} ${el.rating} <iconify-icon inline icon="bx:upvote"></iconify-icon></small>
                       </div>
                     </div>
                     </a>
