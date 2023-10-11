@@ -1,3 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Tilt+Neon&display=swap");
+@font-face {
+  font-family: "PrimaryFont";
+  src: url("../fonts/SFUIText-Regular.ttf") format("truetype"),
+    url("../fonts/SFUIText-Medium.ttf") format("truetype"),
+    url("../fonts/SFUIText-Bold.ttf") format("truetype"),
+    url("../fonts/SFUIText-Semibold.ttf") format("truetype"),
+    url("../fonts/SFUIText-Light.ttf") format("truetype");
+  /* Additional font properties can be set here, such as font-weight and font-style */
+}
+$primary-color: #3779f5;
+$secondary-color: #7d78ec;
+$success-color: #357848;
+$primary-light: #e9f2fe;
+$gray: #b3b3b3;
+
+.primary-color {
+  color: $primary-color;
+}
+.primary-bg {
+  background-color: $primary-color !important;
+}
+.secondary-bg {
+  background-color: $secondary-color !important;
+}
 * {
-  background-color: #000;
+  font-family: "MyFont", sans-serif;
+}
+
+.secondary-font {
+  font-family: "Manrope", sans-serif;
+  font-family: "Tilt Neon", sans-serif !important;
+}
+.active {
+  background-color: $primary-color !important;
+  color: #fff !important;
+}
+
+.nav-link {
+  color: #000;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background-color: $primary-light;
+  color: $primary-color;
+}
+.search-input {
+  border: none;
+  border-radius: 0px;
+  padding: 10px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.custom-input {
+  border: 0;
+  border-bottom: 1px solid $gray;
+  // padding: 10px;
+  transition: all 0.2s;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none !important;
+    border: none;
+  }
+}
+option {
+  border: none !important;
+}
+#searchWrap {
+  border-bottom: 1px solid $gray;
+}
+.search-input:focus {
+  outline: none;
+
+  #searchWrap {
+    border-bottom: 1px solid $primary-color;
+  }
+}
+button:focus {
+  outline: none;
+}
+.rotate90 {
+  transform: rotate(90deg);
+}
+.no-wrap {
+  white-space: nowrap;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.min-wh-60 {
+  min-height: 60vh;
+}
+.bg-gradient-custom {
+  background: linear-gradient(to bottom, #87ceeb, #00bfff);
 }

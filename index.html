@@ -9,20 +9,263 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="scripts/main.js" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Home page</title>
   </head>
-  <body>
-    <!-- Header -->
-    <div class="container">
-      <h1>pozz</h1>
-    </div>
+  <body class="min-vh-100">
+    <div class="container-fluid p-0">
+      <div class="row m-0">
+        <!-- SIDEBAR -->
+        <div
+          class="d-flex flex-column col-sm-2 px-0 flex-shrink-0 min-vh-100 d-inline-block text-white bg-white border-end"
+        >
+          <a
+            href="/"
+            class="d-flex text-center w-100 justify-content-center align-items-center p-4 mb-0 me-md-auto secondary-font text-decoration-none text-dark"
+          >
+            <span class="fs-1 secondary-font fw-bold"
+              >solvio<span class="primary-color">.</span>
+            </span>
+          </a>
+          <hr class="text-dark m-0" />
+          <ul class="nav flex-column mb-auto mt-3">
+            <li class="nav-item px-2">
+              <a
+                href="#"
+                class="nav-link active my-1 py-3 fw-bold d-flex align-items-center"
+                aria-current="page"
+              >
+                <iconify-icon
+                  inline
+                  icon="mingcute:check-2-fill"
+                  class="fs-3 me-2"
+                ></iconify-icon>
+                Solved
+              </a>
+            </li>
+            <li class="nav-item px-2">
+              <a
+                href="#"
+                class="nav-link py-3 fw-bold my-1 d-flex align-items-center"
+              >
+                <iconify-icon
+                  icon="icons8:idea"
+                  inline
+                  class="fs-3 me-2"
+                ></iconify-icon>
+                New Solutions
+              </a>
+            </li>
+            <li class="nav-item px-2">
+              <a
+                href="#"
+                class="nav-link py-3 fw-bold my-1 d-flex align-items-center"
+              >
+                <iconify-icon
+                  icon="ion:settings-outline"
+                  inline
+                  class="fs-3 me-2"
+                ></iconify-icon>
+                Orders
+              </a>
+            </li>
+          </ul>
+          <hr />
+        </div>
 
+        <!-- CONTENT -->
+        <div class="col-sm-10">
+          <div class="container">
+            <!-- USER ICON -->
+            <div class="row">
+              <div class="col">
+                <div class="dropdown p-3 d-flex justify-content-end">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
+                    id="dropdownUser1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="https://github.com/mdo.png"
+                      alt=""
+                      width="32"
+                      height="32"
+                      class="rounded-circle me-2"
+                    />
+                    <strong>mdo</strong>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark text-small shadow"
+                    aria-labelledby="dropdownUser1"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#">New project...</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- SEARCH INPUT -->
+            <div class="row">
+              <div class="col">
+                <form action="#">
+                  <div
+                    class="w-100 d-flex justify-content-center flex-column align-items-center"
+                  >
+                    <div
+                      id="searchWrap"
+                      class="input-group w-50 align-items-center justify-content-center"
+                    >
+                      <div
+                        class="d-flex w-100 align-items-center justify-content-between"
+                      >
+                        <input
+                          type="text"
+                          placeholder="Search what you want..."
+                          class="search-input flex-fill"
+                        />
+                        <a href="#"
+                          ><iconify-icon
+                            inline
+                            icon="iconamoon:search-bold"
+                          ></iconify-icon
+                        ></a>
+                      </div>
+                    </div>
+                    <div class="w-50">
+                      <div class="row">
+                        <button
+                          id="advancedSearchButton"
+                          class="btn mt-1 text-end primary-color fw-bold fs-6 d-flex align-items-center justify-content-end"
+                        >
+                          Advanced search
+                          <iconify-icon
+                            inline
+                            id="search-arrow"
+                            icon="iconamoon:arrow-right-2-duotone"
+                          ></iconify-icon>
+                        </button>
+                      </div>
+                      <div class="row" id="advancedSearchSection">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="startDate" class="form-label"
+                                >Start Date</label
+                              >
+                              <input
+                                type="date"
+                                class="form-control"
+                                id="startDate"
+                                name="startDate"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="endDate" class="form-label"
+                                >End Date</label
+                              >
+                              <input
+                                type="date"
+                                class="form-control"
+                                id="endDate"
+                                name="endDate"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Select Items</label>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="item1"
+                              name="items"
+                              value="item1"
+                            />
+                            <label class="form-check-label" for="item1">
+                              Item 1
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="item2"
+                              name="items"
+                              value="item2"
+                            />
+                            <label class="form-check-label" for="item2">
+                              Item 2
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="item3"
+                              name="items"
+                              value="item3"
+                            />
+                            <label class="form-check-label" for="item3">
+                              Item 3
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- VIEW AND SORT -->
+            <div class="row">
+              <div class="col d-flex justify-content-end">
+                <select name="sort" id="sort" class="custom-input border-0">
+                  <option value="0">Sort by</option>
+                  <option value="0">Select</option>
+                  <option value="0">Select</option>
+                  <option value="0">Select</option>
+                </select>
+                <button class="btn">
+                  <iconify-icon icon="ic:baseline-view-stream"></iconify-icon>
+                </button>
+                <button class="btn">
+                  <iconify-icon icon="ic:round-grid-view"></iconify-icon>
+                </button>
+              </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="row mt-3" id="solutionsWrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JQUERY  -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- ICONS -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <!-- SCRIPTS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
