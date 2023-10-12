@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Components</title>
+    <link rel="stylesheet" href="componets.css">
+</head>
+<body>
+    <div id="container">
+
+        <div class="button-container">
+            <button type="submit" class="button" id="delete-soltution">Delete Solution</button>
+    
+        </div>
+
+        <div class="label-container">
+            <h2>Short Title</h2>
+        </div>
+        
+        <div class="title-container">
+            
+            <input type="text" id="short-title-text">
+
+        </div>
+
+
+        <div class="label-container">
+            <h2>Describe the Problem</h2>
+        </div>
+        
+        <div class="title-container">
+            
+            <input type="text" id="description-text">
+
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="button" id="text">Text</button>
+            <button type="submit" class="button" id="image">Image</button>
+            <button type="submit" class="button" id="code">Code</button>
+    
+        </div>
+
+
+
+        <div id="hero" >
+            <label for="input-file" id="drop-area">
+                <input type="file" accept="Image/*" id="input-file" hidden>
+                <div id="img-view">
+                    <img src="508-icon.png">
+                    <p>Drag and drop or click here<br> upload the image</p>
+                    <span>Upload any image from the desktop</span>
+
+                   
+    
+                </div>
+
+                <div class="delete-container">
+                    <button type="submit" class="button" id="delete-image">Delete Image</button>
+                </div>
+            </label>
+
+           
+    
+        </div>
+
+
+        <div class="text-container">
+            <textarea id="textbox" placeholder="Be precise and clear"></textarea>
+        </div>
+
+        <div class="delete-container">
+            <button type="submit" class="button" id="delete-text">Delete Text</button>
+        </div>
+
+        <div id="code-container">
+            <textarea id="codebox" placeholder="Try to put small sections of code with brief explanation to make it wasy for everyone"></textarea>
+
+        </div>
+
+        <div class="delete-container">
+            <button type="submit" class="button" id="delete-code">Delete Code</button>
+        </div>
+
+        <div class="label-container">
+            <h2>Select Department</h2>
+        </div>
+
+        <div class="title-container">
+            
+            <select id="tags">
+                <option value="engineering">Engineering</option>
+                <option value="design">Design</option>
+                <option value="project-management">Project Management</option>
+                <option value="finance">Finance</option>
+                <option value="sales">Sales</option>
+                <option value="legal">Legal</option>
+                <option value="hr">HR</option>
+                <option value="recruiting">Recruiting</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="label-container">
+            <h2>Add Tags</h2>
+        </div>
+
+        <div class="title-container">
+            
+            <select id="tags">
+                <option value="web-development">Web Development</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="html">HTML</option>
+                <option value="javascript">Javascript</option>
+                <option value="c#">C#</option>
+                <option value="ruby">Ruby</option>
+                <option value="python">Python</option>
+
+            </select>
+
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="button" id="save">Save</button>
+            <button type="submit" class="button" id="publish">Publish</button>
+    
+        </div>
+
+
+    
+        
+
+    </div>
+    
+    
+    
+</body>
+<script src="components.js"></script>
+
+</html>
