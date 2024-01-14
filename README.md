@@ -24,21 +24,9 @@ Solvio is a web application developed as part of an Erasmus project aimed at pro
 
 - **User Profiles**: Each employee has a profile that showcases their contributions and helps build a sense of community within the platform.
 
-### 4. Notification System
-
-- **Alerts for Updates**: Employees receive notifications for updates on problems they have engaged with or solutions they have contributed.
-
-- **Real-time Updates**: The platform provides real-time notifications to keep users informed about the latest discussions and solutions.
-
-### 5. Contribution Tracking
+### 4. Contribution Tracking
 
 - **Solution Metrics**: Users can track the popularity and effectiveness of solutions through metrics such as views, likes, and implementation success rates.
 
 - **Recognition System**: Acknowledgment and recognition features for users who consistently provide valuable solutions to the community.
 
-## Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/solvio-frontend.git
